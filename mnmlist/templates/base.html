@@ -32,15 +32,22 @@
                 {% for page in PAGES %}
                     <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>{% if not loop.last %} ::{% endif %}</li>
                 {% endfor %}
-                {% if categories|length > 1 %}
-                    <li>:: <a href="{{ SITEURL }}/categories.html">Catégories</a></li>
+                {% if categories|length > 1 and False %}
+                    <li>:: <a href="{{ SITEURL }}/categories.html">Categories</a></li>
                 {% endif %}
                 {% if tags|length > 1 %}
                     <li>:: <a href="{{ SITEURL }}/tags.html">Tags</a></li>
                 {% endif %}
+                    <li>:: <a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                {% if SOCIAL %}
+                    {% for name, link in SOCIAL %}
+                        <li>:: <a href="{{ link }}">{{ name }}</a></li>
+                    {% endfor %}
+                {% endif %}
                 </ul>
+                
             </nav>
-                <p id="theme-credit"><a href="http://mathieu.agopian.info/mnmlist/theme.html">Thème mnmlist</a></p>
+                <p id="theme-credit" style="display:none;"><a href="http://mathieu.agopian.info/mnmlist/theme.html">Thème mnmlist</a></p>
         </footer>
 
 {% include 'analytics.html' %}
