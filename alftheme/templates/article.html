@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ super() }} : {{ article.title }}{% endblock %}
+{% block content %}        
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h1><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h1>
+                {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}
+                <article>
+                    {{ article.content }}{% include 'comments.html' %}
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock %}

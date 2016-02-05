@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="{{ SITEURL }}/theme/fonts/iconic/css/open-iconic-bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
+<link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+{% if FEED_RSS %}
+<link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+{% endif %}
+
+<!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie.css"/>
+                <script src="{{ SITEURL }}/js/IE8.js" type="text/javascript"></script><![endif]-->
+
+<!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie6.css"/><![endif]-->
+</head>
+
+<body>
+
+{% include 'nav.html' %}
+
+<div class="main-content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <ul class="">
+            {% if SOCIAL %}
+                {% for name, link in SOCIAL %}
+                    <li><a href="{{ link }}">{{ name }}</a></li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</footer>
+
+{% include 'analytics.html' %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
