@@ -4,7 +4,7 @@
 <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8" />
-<link rel="stylesheet" href="{{ SITEURL }}/theme/fonts/iconic/css/open-iconic-bootstrap.min.css" type="text/css" />
+<script src="https://use.fonticons.com/ec753b77.js"></script>
 <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
 <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
 {% if FEED_RSS %}
@@ -25,23 +25,12 @@
 <body>
 
 {% include 'nav.html' %}
+{% include 'header.html' %}
 
 <div class="main-content">
     {% block content %}
     {% endblock %}
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <ul class="">
-            {% if SOCIAL %}
-                {% for name, link in SOCIAL %}
-                    <li><a href="{{ link }}">{{ name }}</a></li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-    </div>
-</footer>
 
 {% include 'analytics.html' %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
