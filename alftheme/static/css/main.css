@@ -13,6 +13,13 @@ This theme is uncopyrighted, free, and offered as is.
 @import url('bootstrap.min.css');
 @import url('bootstrap-theme.min.css');
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     background: #fff;
     color: #333;
@@ -110,16 +117,8 @@ pre {
     padding: 10px;
 }
 
-header {
-    padding-bottom: 20px;
-}
-
-header a {
-    border-bottom: none;
-}
-
-header a#page-title {
-    font-weight: bold;
+.main-content {
+    margin-top: 4em;
 }
 
 #site-title {
@@ -136,10 +135,6 @@ header a#page-title {
     padding-bottom: 10px;
 }
 
-.main-content {
-    margin-top: 4em;
-}
-
 .navbar-default {
     background-image: none;
     background: transparent;
@@ -147,17 +142,38 @@ header a#page-title {
     border: none;
 }
 
-footer ul {
-    list-style-type: none;
-    text-align: center
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1em 0 .25em 0;
 }
-    footer ul li {
-        display: inline;
-        color: #000;
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    max-width: 50%;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+    .navbar ul li {
+        font-size: 1.25em;
     }
-        footer ul li a img {
-            width: 2.4em;
+        .navbar ul li a {
+            color: #fff;
         }
-        footer ul li .oi {
-            color: #000;
-        }
+
+@media all and (max-width: 500px) {
+    .navbar .container {
+        width: 100%;
+    }
+
+    .navbar ul {
+        max-width: 100%;
+    }
+
+    .main-content {
+        margin-top: 5.5em;
+    }
+}
