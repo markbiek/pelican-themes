@@ -49,6 +49,7 @@ h2 {
 
 h3 {
     font-size: 1em;
+    text-decoration: underline;
 }
 
 h4 {
@@ -89,7 +90,7 @@ p.caption {
 
 a {
     color: #303030;
-    text-decoration: none;
+    text-decoration: underline;
 }
 a:hover {
     color: #999;
