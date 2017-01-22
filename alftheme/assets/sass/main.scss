@@ -8,11 +8,10 @@ Autor URI: //mark.biek.org
 This theme is uncopyrighted, free, and offered as is.
  */
 
-@import url(//fonts.googleapis.com/css?family=Lato:400,700,400italic);
-@import url(//fonts.googleapis.com/css?family=Pontano+Sans);
-@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
-@import url('bootstrap.min.css');
-@import url('bootstrap-theme.min.css');
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Pontano+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 html {
   box-sizing: border-box;
