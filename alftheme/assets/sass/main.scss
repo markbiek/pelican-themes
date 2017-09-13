@@ -11,7 +11,7 @@ This theme is uncopyrighted, free, and offered as is.
 @import 'vars';
 
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -21,7 +21,7 @@ body {
     background: $white;
     color: $primary-text-color;
     font-size: 62.5%;
-    font-family: 'Lato', sans-serif;
+    font-family: $primary-font;
 }
 body {
     font-size: 2.2em;
@@ -29,7 +29,7 @@ body {
 
 h1, h2, h3, h4 {
     color: $primary-text-color;
-    font-family: 'Pontano Sans', sans-serif;
+    font-family: $secondary-font;
     font-weight: 700;
 }
 
@@ -49,7 +49,7 @@ h3 {
 }
 
 h4 {
-    font-family: 'Pontano Sans', sans-serif;
+    font-family: $secondary-font;
 }
 
 time {
@@ -69,7 +69,7 @@ blockquote {
     margin: 0px;
     padding: 0 12px 0 12px;
     text-align: center;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: $tertiary-font;
     font-size: 28px;
 }
 
@@ -109,7 +109,7 @@ strong {
 
 tt, pre {
     background-color: $pre-color;
-    font-family: Inconsolata, Monaco, monospace;
+    font-family: $code-font;
     line-height: 1.2em;
 }
 
@@ -148,6 +148,11 @@ pre {
     display: flex;
     justify-content: flex-start;
     padding: 1em 0 .25em 0;
+    border: 1px solid red;
+
+    @include respond($screen-md) {
+        border: none;
+    }
 }
 
 .navbar ul {
@@ -159,23 +164,9 @@ pre {
     margin: 0;
     padding: 0;
 }
-    .navbar ul li {
-        font-size: 1.25em;
-    }
-        .navbar ul li a {
-            color: $white;
-        }
-
-@media all and (max-width: 500px) {
-    .navbar .container {
-        width: 100%;
-    }
-
-    .navbar ul {
-        max-width: 100%;
-    }
-
-    .main-content {
-        margin-top: 5.5em;
-    }
+.navbar ul li {
+    font-size: 1.25em;
+}
+.navbar ul li a {
+    color: $white;
 }

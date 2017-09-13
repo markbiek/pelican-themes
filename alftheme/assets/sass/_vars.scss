@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+//Colors
 $primary-text-color: #333;
 $secondary-text-color: #c0c0c0;
 $tertiary-text-color: #555;
@@ -11,3 +12,29 @@ $link-color: #303030;
 $link-hover-color: #999;
 $white: #fff;
 $black: #333;
+
+//Fonts
+$primary-font: 'Lato', sans-serif;
+$secondary-font: 'Pontano Sans', sans-serif;
+$tertiary-font: 'Open Sans Condensed', sans-serif;
+$code-font: Inconsolata, Monaco, monospace;
+
+//Breakpoints
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 2000px;
+
+/*
+Example:
+&.bump {
+    @include respond($screen-md) {
+        transform: translateY(46px);
+    }
+}
+*/
+@mixin respond($minWidth) {
+    @media only screen and (min-width: $minWidth) {
+        @content;
+    }
+}
