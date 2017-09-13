@@ -8,10 +8,7 @@ Autor URI: //mark.biek.org
 This theme is uncopyrighted, free, and offered as is.
  */
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
-@import url(https://fonts.googleapis.com/css?family=Pontano+Sans);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import 'vars';
 
 html {
   box-sizing: border-box;
@@ -21,8 +18,8 @@ html {
 }
 
 body {
-    background: #fff;
-    color: #333;
+    background: $white;
+    color: $primary-text-color;
     font-size: 62.5%;
     font-family: 'Lato', sans-serif;
 }
@@ -31,7 +28,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #333333;
+    color: $primary-text-color;
     font-family: 'Pontano Sans', sans-serif;
     font-weight: 700;
 }
@@ -56,7 +53,7 @@ h4 {
 }
 
 time {
-    color: #c0c0c0;
+    color: $secondary-text-color;
     font-size: 60%;
 }
 
@@ -88,11 +85,11 @@ p.caption {
 }
 
 a {
-    color: #303030;
+    color: $link-color;
     text-decoration: underline;
 }
 a:hover {
-    color: #999;
+    color: $link-hover-color;
     border: none;
 }
 
@@ -106,12 +103,12 @@ ul li, ol li {
 }
 
 strong {
-    color: #555555;
+    color: $tertiary-text-color;
     font-weight: bold;
 }
 
 tt, pre {
-    background-color: #fafafa;
+    background-color: $pre-color;
     font-family: Inconsolata, Monaco, monospace;
     line-height: 1.2em;
 }
@@ -166,7 +163,7 @@ pre {
         font-size: 1.25em;
     }
         .navbar ul li a {
-            color: #fff;
+            color: $white;
         }
 
 @media all and (max-width: 500px) {
