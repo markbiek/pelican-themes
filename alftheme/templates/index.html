@@ -7,7 +7,7 @@
 
         {# First item #}
         {% if loop.first %}
-            <div class="current-post post">
+            <div class="container current-post post">
                 <div class="content">
                     <h1><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h1>
                     {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}
@@ -17,22 +17,64 @@
                 </div>
             </div>
 
+            <div class="container">
+                <div class="content">
+                    <h1>Recent Projects</h1>
+
+                    <div class="projects">
+                        <div class="project">
+                            <h4>Earthquake Map app</h4>
+                            <img src="https://static.biek.org/blog/img/earthquake-map.png" alt="Earthquake Map app" class="project-thumb" />
+                            <div class="project-description">
+                                <p>A simple react-native + redux app that reads USGS earthquake data from around the world and displays it on a map.<p>
+                                <p>
+                                <a href='https://play.google.com/store/apps/details?id=com.reallyuglyapps.earthquakemap&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width="120" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a><br />
+                                    <a href='https://itunes.apple.com/app/id1332489693'><img alt='Get it on iTunes' src='https://static.biek.org/blog/img/apple-app-store.svg' /></a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <h4><a href="https://cnpe.org">cnpe.org</a></h4>
+                            <img src="https://static.biek.org/blog/img/cnpe.png" alt="Center for Non-Profit Excellence" class="project-thumb" />
+                            <div class="project-description">
+                                <p>For VIA Studio: A WordPress site with ReactJS+redux event registration and a custom PHP plugin for Salesforce integration and payment processing.</p>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <h4><a href="https://ecampaign.fundforthearts.org">ecampaign.fundforthearts.org</a></h4>
+                            <img src="https://static.biek.org/blog/img/ecampaign.png" alt="Fund for the Arts - Ecampaign" class="project-thumb" />
+                            <div class="project-description">
+                                <p>For VIA Studio: A custom Laravel site for collecting donations.</p>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <h4><a href="https://firstbuild.com">firstbuild.com</a></h4>
+                            <img src="https://static.biek.org/blog/img/firstbuild.png" alt="GE First Build" class="project-thumb" />
+                            <div class="project-description">
+                                <p>For VIA Studio: A WordPress site with a custom ReactJS product admin (built into the WordPress admin) as well as Shopify integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {% if loop.length > 1 %}
-                <div class="container" style="display:none;">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <section id="article-list">
-                                <h2>All posts</h2>
-                                <ol>
+                <div class="container no-border all-posts">
+                    <div class="content">
+                        <h1>All Posts</h1>
+                            <ul>
             {% endif %}
         {# other items #}
         {% else %} 
-            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></li>
+                <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}" target="_blank">{{ article.title }}</a></li>
         {% endif %}
 {% endfor %}
     {% if loop.length > 1 %}
-                </ol>
-                </section><!-- #article-list -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

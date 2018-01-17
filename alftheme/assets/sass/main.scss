@@ -28,8 +28,32 @@ h1, h2, h3, h4, h5, h6 {
     color: $color-primary-2;
 }
 
+h1,
+h1 a {
+    font-size: 2em;
+}
+
+h4,
+h4 a {
+    font-size: 1.25em;
+}
+
+p {
+    font-size: 2.25em;
+    line-height: 1.25em;
+}
+
 article {
     margin-top: .5em;
+
+    img {
+        width: 95%;
+        height: auto;
+
+        @include respond($screen-md) {
+            width: auto;
+        }
+    }
 }
 
 iframe {
@@ -48,10 +72,10 @@ blockquote {
 }
 
 a {
-    color: $color-primary-1;
+    color: $color-primary-2;
 
     &:hover {
-        color: $color-primary-2;
+        color: $color-primary-1;
     }
 
     &:visited {
@@ -59,13 +83,84 @@ a {
     }
 }
 
-.post {
+.container {
     width: 100vw;
-    min-height: 100vh;
+    min-height: 512px;
+    border-bottom: 1px solid $color-primary-1;
+    padding: 1em 0 1em 0;
+    margin: 1em 0 1em 0;
 
     .content {
         width: 75%;
         margin: 2em auto;
+    }
+
+    &.no-border {
+        border: none;
+    }
+}
+
+.main-content {
+    margin-bottom: 100px;
+}
+
+.post {
+    min-height: 100vh;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .project {
+        width: 250px;
+        margin-right: 2em;
+        border-bottom: 1px solid $color-primary-4;
+
+        @include respond($screen-md) {
+            border: none;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            border: none;
+        }
+
+        h4 {
+            text-align: center;
+        }
+
+        .project-description {
+            p {
+                font-size: 1.125em;
+                text-align: center;
+            }
+        }
+
+       .project-thumb {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            border: 1px solid $color-primary-3;
+       } 
+    }
+}
+
+.all-posts {
+    .content {
+        width: 95%;
+
+        @include respond($screen-md) {
+            width: 50%;
+        }
+
+        ul {
+            list-style-type: none;
+            font-size: 1.5em;
+            line-height: 2;
+        }
     }
 }
 
@@ -89,7 +184,10 @@ nav {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    background: $white;
 
     .footer-content {
         display: flex;
@@ -106,9 +204,10 @@ footer {
         a {
             display: block;
             font-size: 6em;
+            color: $color-primary-3;
 
             &:visited {
-                color: $color-primary-1;
+                color: $color-primary-0;
             }
         }
     }
