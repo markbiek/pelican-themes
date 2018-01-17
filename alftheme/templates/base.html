@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8" />
-<link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
-{% if FEED_RSS %}
-<link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
-{% endif %}
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+    {% if FEED_RSS %}
+    <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+    <script src="https://use.fontawesome.com/d6b00eaa2c.js"></script>
+    <link href="{{ SITEURL }}/theme/css/{{ CSS_FILE}}" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -20,16 +22,18 @@
     {% endblock %}
 </div>
 
+{% include 'footer.html' %}
 {% include 'analytics.html' %}
-<script src="https://use.fonticons.com/ec753b77.js" defer></script>
 <script>
-    /* First CSS File */
+    /*
+    //Uncomment for production
     var link = document.createElement('link'); 
     link.rel = 'stylesheet';
     link.href = '{{ SITEURL }}/theme/css/{{ CSS_FILE}}';
     link.type = 'text/css'; 
     var godefer = document.getElementsByTagName('link')[0]; 
     godefer.parentNode.insertBefore(link, godefer);
+    */
 </script>
 </body>
 </html>

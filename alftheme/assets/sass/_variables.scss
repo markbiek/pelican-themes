@@ -1,0 +1,25 @@
+// Typography
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro|Raleway');
+
+$sans-serif: 'Raleway', sans-serif;
+$mono: 'Anonymous Pro', monospace;
+
+// Colors
+$white: #fff;
+$color-primary-0: #582A72; //bright-purple
+$color-primary-1: #A501FF; //dark-purple
+$color-primary-2: #720CAA; //medium-purple
+$color-primary-3: #322639; //grey-purple
+$color-primary-4: #000000; //black
+
+// Responsive
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 2000px;
+
+@mixin respond($minWidth) {
+    @media only screen and (min-width: $minWidth) {
+        @content;
+    }
+}

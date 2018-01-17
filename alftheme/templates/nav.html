@@ -1,14 +1,5 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a href="{{ SITEURL }}" class="navbar-brand" id="site-title">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
-        </div>
-        <ul>
-            {% if SOCIAL %}
-                {% for name, link in SOCIAL %}
-                    <li><a href="{{ link }}">{{ name }}</a></li>
-                {% endfor %}
-            {% endif %}
-        </ul>
+<nav>
+    <div class="content">
+        My name is <a href="{{ SITEURL }}" class="navbar-brand" id="site-title">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a> and I am a software developer, currently in Louisville, KY. I like to work with smart, kind people making beautiful and interesting things.
     </div>
 </nav>
