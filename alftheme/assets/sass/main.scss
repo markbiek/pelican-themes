@@ -214,6 +214,7 @@ footer {
         align-items: center;
         width: 70%;
         margin: 0 auto;
+	padding: 1em 0 1em;
 
         @include respond($screen-md) {
             width: 30%;
@@ -228,6 +229,13 @@ footer {
             &:visited {
                 color: $color-primary-0;
             }
+
+	    &:hover {
+		animation-name: wobble;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;
+	    }
         }
     }
 }
