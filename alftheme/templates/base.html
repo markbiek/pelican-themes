@@ -8,7 +8,6 @@
     {% if FEED_RSS %}
     <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
-    <script src="https://use.fontawesome.com/d6b00eaa2c.js"></script>
     <link href="{{ SITEURL }}/theme/css/{{ CSS_FILE}}" type="text/css" rel="stylesheet" />
 </head>
 
@@ -24,16 +23,6 @@
 
 {% include 'footer.html' %}
 {% include 'analytics.html' %}
-<script>
-    /*
-    //Uncomment for production
-    var link = document.createElement('link'); 
-    link.rel = 'stylesheet';
-    link.href = '{{ SITEURL }}/theme/css/{{ CSS_FILE}}';
-    link.type = 'text/css'; 
-    var godefer = document.getElementsByTagName('link')[0]; 
-    godefer.parentNode.insertBefore(link, godefer);
-    */
-</script>
+<script src="https://use.fontawesome.com/d6b00eaa2c.js" async></script>
 </body>
 </html>
