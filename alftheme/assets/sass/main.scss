@@ -197,6 +197,7 @@ nav {
     border-bottom: 1px solid $color-primary-3;
     font-size: 3em;
 
+    aside,
     .content {
         width: 75%;
         margin: 0 auto;
@@ -206,6 +207,10 @@ nav {
     a {
         color: $color-primary-4;
         font-size: 1.125em;
+    }
+
+    aside {
+        font-size: 0.85em; 
     }
 }
 
