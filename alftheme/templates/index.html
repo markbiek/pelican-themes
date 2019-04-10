@@ -26,7 +26,11 @@
             {% endif %}
         {# other items #}
         {% else %} 
-                <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}" target="_blank">{{ article.title }}</a></li>
+                <li>
+                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}" target="_blank">
+                        {{ article.date.strftime('%Y %b') }} &mdash; {{ article.title }}
+                    </a>
+                </li>
         {% endif %}
 {% endfor %}
     {% if loop.length > 1 %}
