@@ -19,9 +19,10 @@ html {
 }
 
 body {
-    background: #fff;
+    background: $black;
     font-size: 62.5%;
     font-family: $sans-serif;
+    color: $color-primary-2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,6 +69,10 @@ article {
     }
 }
 
+time {
+    font-size: 1.5em;
+}
+
 iframe {
     max-width: 100%;
     max-height: 315px;
@@ -82,10 +87,11 @@ code,
 pre,
 blockquote {
     font-family: $mono;
-    font-size: 1.35em;
-    background-color: #f2f2f2;
-    padding: 2em;
+    font-size: 1.75em;
+    background-color: $color-primary-3;
+    padding: 1em;
     overflow: scroll;
+    color: $color-primary-2;
 
     @include respond($screen-md) {
         overflow: inherit;
@@ -100,17 +106,18 @@ code {
 a {
     color: $color-primary-2;
 
-    &:hover {
-        color: $color-primary-1;
+    &:hover,
+    &:focus {
+        text-decoration: none;
     }
 
     &:visited {
-        color: $color-primary-3;
+        color: darken($color-primary-2, 25%);
     }
 }
 
 .container {
-    width: 100vw;
+    width: 99vw;
     min-height: 512px;
     border-bottom: 1px solid $color-primary-1;
     padding: 1em 0 1em 0;
@@ -184,15 +191,18 @@ a {
 
         ul {
             list-style-type: none;
-            font-size: 1.5em;
-            line-height: 2;
+            font-size: 2em;
+            line-height: 1.25;
+
+            li {
+                margin-bottom: 12px;
+            }
         }
     }
 }
 
 nav {
-    width: 100vw;
-    background: $white;
+    width: 99vw;
     margin: 0 auto;
     border-bottom: 1px solid $color-primary-3;
     font-size: 3em;
@@ -217,14 +227,18 @@ nav {
 footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
-    background: $white;
+    width: 99%;
+    background: $color-primary-3;
+
+    @include respond($screen-md) {
+        width: 100%;
+    }
 
     .footer-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 70%;
+        width: 100%;
         margin: 0 auto;
 	padding: 1em 0 1em;
 
@@ -235,14 +249,15 @@ footer {
 
         a {
             display: block;
-            font-size: 6em;
-            color: $color-primary-3;
+            color: $color-primary-2;
+            font-size: 4em;
 
-            &:visited {
-                color: $color-primary-0;
+            @include respond($screen-md) {
+                font-size: 6em;
             }
 
-	    &:hover {
+	    &:hover,
+            &:focus {
 		animation-name: wobble;
 		animation-duration: 1s;
 		animation-timing-function: ease-in-out;
