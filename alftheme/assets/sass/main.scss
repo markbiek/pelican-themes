@@ -135,7 +135,11 @@ a {
   margin: 1em 0 1em 0;
 
   .content {
-    width: 75%;
+    width: 95%;
+
+    @include respond($screen-md) {
+        width: 75%;
+    }
     margin: 2em auto;
   }
 
@@ -216,11 +220,20 @@ nav {
   width: 99vw;
   margin: 0 auto;
   border-bottom: 1px solid $color-primary-3;
-  font-size: 3em;
+  font-size: 2em;
+  
+    @include respond($screen-md) {
+        font-size: 3em;
+    }
 
   aside,
   .content {
-    width: 75%;
+    width: 95%;
+
+    @include respond($screen-md) {
+        width: 75%;
+    }
+
     margin: 0 auto;
     padding: 1em 0 1em 0;
   }
@@ -239,7 +252,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 99%;
   margin: 0 auto;
   padding: 1em 0 1em;
 
